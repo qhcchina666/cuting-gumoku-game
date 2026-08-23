@@ -50,20 +50,20 @@ let totalGameTimeSeconds = 0;
 // 人物互动变量
 let refereeClickCount = 0;
 const refereeClickPhrases = [
-    "哎呀，你怎么突然点人家...人家会害羞的啦~",
-    "哼，再乱点我，我可就要假装生气不理你了哟！",
-    "嘻嘻，看你下棋这么认真，婷婷心里也觉得很开心呢~"
+    "你点啥！",
+    "以雷霆击碎黑暗！",
+    "下棋这么认真，你小子有点实力"
 ];
 const refereeClickImages = ['assets/images/referee1.jpg', 'assets/images/referee2.jpg', 'assets/images/referee3.jpg'];
 
 const pieceSound = new Audio('https://actions.google.com/sounds/v1/foley/wood_click.ogg');
 
 const phrases = {
-    start: ["欢迎来到仙剑棋婷！<br>准备好接受我的挑战了吗？", "请多指教呀~<br>黑子先手哟！"],
-    playerTurn: ["轮到你了，<br>请落子吧！", "仔细想想，<br>不要大意哦！", "这一步很关键呢！"],
-    aiTurn: ["嗯...让我想想...", "婷婷思考中...", "看我的妙招！"],
-    playerWin: ["哇，你赢了！<br>太厉害了！", "甘拜下风...<br>这局是你赢了。"],
-    aiWin: ["哈哈，是我赢啦！<br>承让承让~", "看来你还需要多加练习哦！"],
+    start: ["欢迎来到QHC五子棋！<br>敢来吗？", "请多指教~<br>黑子先手！"],
+    playerTurn: ["轮到你了，<br>请落子！", "仔细想想，<br>不要大意！", "这一步很关键！"],
+    aiTurn: ["嗯...let me think think...", "人机思考中...", "以雷霆击碎黑暗！"],
+    playerWin: ["啥，你赢了！<br>Fu*k！", "甘拜下风...<br>这局是你赢了。"],
+    aiWin: ["哈哈，itsme！<br>太菜了~", "老弟你还得练！"],
     invalidMove: ["这里已经有棋子啦，<br>换个地方吧！"]
 };
 
@@ -267,12 +267,12 @@ function handleGameOver(winner) {
     setTimeout(() => {
         modal.classList.remove('hidden');
         if (winner === BLACK) {
-            modalTitle.textContent = "恭喜获胜！";
-            modalMessage.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === BLACK ? "你战胜了对手！" : "对手获得了胜利") : "你战胜了婷婷！";
+            modalTitle.textContent = "Vectory！";
+            modalMessage.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === BLACK ? "你战胜了对手！" : "对手获得了胜利") : "你战胜了人机！";
             updateReferee(getRandomPhrase('playerWin'), 'playerWin');
         } else {
-            modalTitle.textContent = "游戏结束";
-            modalMessage.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === WHITE ? "你战胜了对手！" : "对手获得了胜利") : "婷婷获胜了！";
+            modalTitle.textContent = "Defeat";
+            modalMessage.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === WHITE ? "你战胜了对手！" : "对手获得了胜利") : "人机获胜了！";
             updateReferee(getRandomPhrase('aiWin'), 'aiWin');
         }
     }, 500);
@@ -370,7 +370,7 @@ function undoMove() {
         if (undoCount <= 0 || moveHistory.length === 0) undoBtn.disabled = true;
     }
 
-    updateReferee("好啦好啦，<br>这步不算，重来吧~", 'playerTurn');
+    updateReferee("No，<br>这步不算，重来吧~", 'playerTurn');
     render();
 }
 
