@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>仙剑棋婷 - 五子棋 (Gomoku)</title>
+    <title>QHC - 五子棋 (Gomoku)</title>
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
@@ -27,7 +27,7 @@
 
             <!-- 人物图片 -->
             <div class="referee-character">
-                <img src="assets/images/referee_normal.png" alt="婷婷" id="refereeImg" title="点我可以互动哦！"
+                <img src="assets/images/referee_normal.png" alt="him" id="refereeImg" title="别点我！"
                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'300\' viewBox=\'0 0 200 300\'><rect width=\'200\' height=\'300\' fill=\'%23e0f7fa\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'16\' text-anchor=\'middle\' fill=\'%23006064\'>请放置 referee.jpg</text></svg>'">
             </div>
 
@@ -35,22 +35,22 @@
             <div class="difficulty-selector" id="aiControls">
                 <label for="difficulty">AI 难度：</label>
                 <select id="difficulty">
-                    <option value="1">新手 (婷婷学步)</option>
+                    <option value="1">新手 (noob)</option>
                     <option value="2" selected>进阶 (小有所成)</option>
-                    <option value="3">大师 (仙剑奇侠)</option>
+                    <option value="3">大师 (老叟戏顽童)</option>
                 </select>
             </div>
 
             <!-- 对话气泡 (移动到下方) -->
             <div class="speech-bubble" id="speechBubble">
-                <p id="refereeMessage">请多指教呀~<br>黑子先手哟！</p>
+                <p id="refereeMessage">请多指教~<br>黑子先手！</p>
             </div>
         </div>
 
         <!-- 右侧：棋盘区 -->
         <div class="board-panel">
             <div class="board-header">
-                <h1>仙剑棋婷 <span class="subtitle">· 五子棋</span></h1>
+                <h1>QHC <span class="subtitle">· 五子棋</span></h1>
 
                 <!-- 五个主按钮 -->
                 <div class="controls-grid">
