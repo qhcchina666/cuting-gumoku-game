@@ -293,7 +293,7 @@ function placePiece(x, y) {
         if (isMyTurn) updateReferee(getRandomPhrase('playerTurn'), 'playerTurn');
         else if (GameNetwork.isOnline) updateReferee("对方正在思考...", 'aiTurn');
     } else {
-        turnIndicator.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === WHITE ? "当前回合: 你 (白子)" : "当前回合: 对手 (白子)") : "当前回合: 婷婷 (白子)";
+        turnIndicator.textContent = GameNetwork.isOnline ? (GameNetwork.myRole === WHITE ? "当前回合: 你 (白子)" : "当前回合: 对手 (白子)") : "当前回合: 入机 (白子)";
         turnIndicator.className = "turn-white";
         if (!GameNetwork.isOnline) {
             isAiThinking = true;
